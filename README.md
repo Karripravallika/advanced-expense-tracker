@@ -36,7 +36,7 @@ A full-featured web application built with **Flask**, **SQLite**, and **Bootstra
 
 ---
 
-## 📁 Folder Structure
+
 ## 📁 Folder Structure
 
 ```plaintext
@@ -70,30 +70,3 @@ advanced-expense-tracker/
 
 
 
----
-
-## 🛠 Setup Instructions
-
-### ✅ Prerequisites
-
-- Python 3.10+
-- `pip` (Python package manager)
-- Optional: `venv` for virtual environments
-
-### 🔧 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Karripravallika/advanced-expense-tracker.git
-cd advanced-expense-tracker
-
-# Create and activate virtual environment
-python -m venv venv
-venv\Scripts\activate   # On Windows
-# source venv/bin/activate  # On macOS/Linux
-
-# Install required packages
-pip install -r requirements.txt
-
-# Run the Flask app
-python app.py
