@@ -18,27 +18,6 @@ A full-featured web application built with **Flask**, **SQLite**, and **Bootstra
 
 ## 📁 Folder Structure
 
-# 💰 Advanced Expense Tracker
-
-A full-featured web application built with **Flask**, **SQLite**, and **Bootstrap** for managing personal expenses. It supports authentication, dashboard analytics, chart visualizations, and CSV export.
-
----
-
-## 🚀 Features
-
-- ✅ User Registration & Login (secure password hashing with Werkzeug)
-- 🧾 Add, View, and Categorize Expenses
-- 📊 Interactive Dashboard with Chart.js (category-wise expense charts)
-- 💾 Export Expenses to CSV
-- 🔐 Login-protected routes using Flask-Login
-- 📂 Modular Flask Blueprints structure
-- 🎨 Clean, responsive UI using Bootstrap 5
-
----
-
-
-## 📁 Folder Structure
-
 ```plaintext
 advanced-expense-tracker/
 │
@@ -68,5 +47,33 @@ advanced-expense-tracker/
 │
 └── README.md               # Project documentation
 
+
+---
+
+## 🛠 Setup Instructions
+
+### ✅ Prerequisites
+
+- Python 3.10+
+- `pip` (Python package manager)
+- Optional: `venv` for virtual environments
+
+### 🔧 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Karripravallika/advanced-expense-tracker.git
+cd advanced-expense-tracker
+
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate   # On Windows
+# source venv/bin/activate  # On macOS/Linux
+
+# Install required packages
+pip install -r requirements.txt
+
+# Run the Flask app
+python app.py
 
 
