@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Add Expense{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">➕ Add a New Expense</h2>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('expenses_bp.add_expense') }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Expense Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="e.g., Coffee, Rent" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount (₹)</label>
+            <input type="number" class="form-control" id="amount" name="amount" step="0.01" min="0" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" name="category" required>
+                <option value="" selected disabled>Select a category</option>
+                <option value="🍔 Food">🍔 Food</option>
+                <option value="🏠 Home">🏠 Home</option>
+                <option value="💼 Work">💼 Work</option>
+                <option value="🎉 Fun">🎉 Fun</option>
+                <option value="🔧 Misc">🔧 Misc</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Expense</button>
+    </form>
+
+    <!-- Back to Dashboard -->
+    <div class="mt-3">
+        <a href="{{ url_for('dashboard_bp.dashboard') }}" class="btn btn-outline-secondary">⬅ Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

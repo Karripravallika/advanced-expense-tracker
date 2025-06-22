@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Welcome, {{ current_user.email }}</h2>
+
+  <!-- Buttons Row -->
+  <div class="d-flex flex-wrap gap-2 mb-4">
+    <a href="{{ url_for('expenses_bp.add_expense') }}" class="btn btn-primary">➕ Add Expense</a>
+    <a href="{{ url_for('export_bp.export_csv') }}" class="btn btn-outline-secondary">⬇ Export to CSV</a>
+  </div>
+
+  <!-- Chart Canvas -->
+  <div class="mb-5">
+    <canvas id="expenseChart" width="600" height="300"></canvas>
+  </div>
+
+  <!-- Expense Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th>Expense</th>
+          <th>Amount (₹)</th>
+          <th>Category</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for exp in expenses %}
+        <tr>
+          <td>{{ exp.name }}</td>
+          <td>{{ "%.2f"|format(exp.amount) }}</td>
+          <td>{{ exp.category }}</td>
+          <td>{{ exp.date.strftime('%Y-%m-%d') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ✅ Data passed to JS safely -->
+<script id="chart-labels" type="application/json">{{ labels | tojson }}</script>
+<script id="chart-data" type="application/json">{{ totals | tojson }}</script>
+
+<!-- ✅ Chart Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='charts.js') }}"></script>
+{% endblock %}

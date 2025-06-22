@@ -1,0 +1,21 @@
+body {
+  background-color: #f9fafb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.alert {
+  margin-top: 1rem;
+}
