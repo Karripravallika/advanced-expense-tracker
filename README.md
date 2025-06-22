@@ -37,35 +37,38 @@ A full-featured web application built with **Flask**, **SQLite**, and **Bootstra
 ---
 
 ## 📁 Folder Structure
+## 📁 Folder Structure
 
-'''
+```plaintext
 advanced-expense-tracker/
 │
-├── app.py # Main Flask app
-├── models.py # SQLAlchemy models
-├── auth.py # Authentication routes
-├── dashboard.py # Dashboard analytics & views
-├── expenses.py # Add/view expense logic
-├── export.py # Export expenses to CSV
-├── config.py # App configuration
-├── requirements.txt # Python dependencies
-│
-├── templates/ # HTML templates (Jinja2)
-│ ├── base.html
-│ ├── login.html
-│ ├── register.html
-│ ├── index.html
-│ └── dashboard.html
-│
-├── static/ # CSS & JS assets
-│ ├── style.css
-│ ├── script.js
-│ └── charts.js
+├── app.py                  # Main Flask app
+├── auth.py                 # Authentication routes (register, login, logout)
+├── config.py               # App configuration
+├── dashboard.py            # Dashboard routes (summary, charts)
+├── expenses.py             # Add/view expenses logic
+├── export.py               # Export expenses as CSV
+├── models.py               # SQLAlchemy models for User and Expense
+├── requirements.txt        # Project dependencies
 │
 ├── instance/
-│ └── expenses.db # SQLite database
-└── README.md
-'''
+│   └── expenses.db         # SQLite database file
+│
+├── static/
+│   ├── style.css           # Custom styles
+│   ├── script.js           # JS for interactivity
+│   └── charts.js           # Chart.js configuration
+│
+├── templates/
+│   ├── base.html           # Base template with Bootstrap
+│   ├── login.html          # User login page
+│   ├── register.html       # User registration page
+│   ├── index.html          # Add/view expense form
+│   └── dashboard.html      # Dashboard with charts and summary
+│
+└── README.md               # Project documentation
+
+
 
 ---
 
